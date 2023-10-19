@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Lista hoteles</title>
+        <link rel="icon" type="image/x-icon" href="../images/favicon.png">
+        <meta charset="utf-8">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+        <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>		
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css"
+              href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+        <script type="text/javascript"
+        src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script type="text/javascript"
+        src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script> 
+
+        <link rel="stylesheet" type="text/css"
+              href="stylelistados.css">
+
+        <script type="text/javascript" src="../js/service_lista_hoteles.js"></script>
+
+
+    </head>
+    <body>
+        <form>        
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a href="../user/index.html"><img src="../images/favicon.png" style="border-radius: 20px; width:40px;"></a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a  href="../user/index.html">Inicio</a></li>
+                        <li class="active"><a href="./listadoHoteles.html">Listar hoteles área administrador</a></li>
+                        <li class="active"><a href="./listadoUsuarios.html">Listar usuarios  área administrador</a></li>
+                        <li class="active"><a href="./listadoReservas.html">Listar reservas  área administrador</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        
+                        <li class="active" ><a href="#"  onClick="cerrarSesion()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </form>
+        <h2>Edición datos hoteles</h2><a href="/VoyagePrive/user/index.html">Listar hoteles</a>
+
+
+
+        <table id="mytable" class="display" cellspacing="0" width="95%">
+            <br />
+            <div align="right">
+                <button type="button" id="add_button" data-toggle="modal" data-target="#hotelModal" class="btn btn-info btn-lg">Nuevo hotel</button>
+            </div>
+
+            <br /><br />
+            <thead>
+                <tr>
+                    <th>ID_Hotel</th>
+                    <th>Nombre hotel</th>
+                    <th>Ubicacion</th>
+                    <th>Descripcion</th>
+                    <th>Fecha Entrada</th>
+                    <th>Nombre imagen</th>
+                    <th>Duracion</th>
+                    <th>Precio Estancia</th>
+                    <th>Reservado</th>
+                    <th>Subir imagen</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th>ID_Hotel</th>
+                    <th>Nombre hotel</th>
+                    <th>Ubicacion</th>
+                    <th>Descripcion</th>
+                    <th>Fecha Entrada</th>
+                    <th>Nombre imagen</th>
+                    <th>Duracion</th>
+                    <th>Precio Estancia</th>
+                    <th>Reservado</th>
+                    <th>Subir imagen</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+
+
+</html>
+
+<!-- MODAL PARA INSERTAR REGISTRO  quito el get-->
+<div id="hotelModal" class="modal fade">
+    <div class="modal-dialog">
+        <form id="hotel_form_nuevo"  method="post" enctype="multipart/form-data">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Nuevo hotel</h3>
+
+
+                </div>
+                <div class="modal-body">
+                    <label>Nombre hotel</label>
+                    <input type="text" name="Nombre" id="nuevo_nombre" class="form-control" />
+                    <br />
+                    <label>Ubicación</label>
+                    <input type="text" name="ubicacion" id="nuevo_ubicacion" class="form-control" />
+                    <br />
+                    <label>Descripción</label>
+                    <input type="text" name="Descripción" id="nuevo_descripcion" class="form-control" />
+                    <br />
+                    <label>Fecha entrada disponible</label>
+                    <input  type="date"  name="fecha_entrada" id="nuevo_fecha_entrada" class="form-control" />
+                    <br />
+                    <label>Duración en días de la estancia</label>
+                    <input type="text" name="duracion" id="nuevo_duracion" class="form-control" />
+                    <br />
+                    <label>Precio total de la estancia</label>
+                    <input type="text" name="precio" id="nuevo_precio" class="form-control" />
+                    <br />
+                    <br />
+                    <label>Reservado</label>
+                    <input  type="checkbox" name="Activo" id="nuevo_activo" class="form-control"  value="true"/>
+                    <br />
+                    <!--comment<label>Imagen</label>
+                    <input type="text" name="nuevo_imagen" id="nuevo_imagen" class="form-control" />
+                    <br /> -->
+
+
+                </div>
+                <div class="modal-footer">
+
+                    <button  type="button" onclick="registroHotel()" value="">Registrar oferta</button>
+
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+
+
+<!-- MODAL PARA ACTUALIZAR REGISTRO eliminado metodo method="get"-->
+<div id="updateModal" class="modal fade">
+    <div class="modal-dialog">
+        <form method="post" id="hotel_form" enctype="multipart/form-data">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Actualizar datos oferta hotel</h3>
+
+
+                </div>
+                <div class="modal-body">
+                    <label>Id hotel</label>
+                    <input type="text" name="id_hotel" id="id_hotel" class="form-control" />
+                    <br />
+                    <label>Nombre hotel</label>
+                    <input type="text" name="nombre" id="nombre" class="form-control" />
+                    <br />
+                    <label>Ubicación</label>
+                    <input type="text" name="ubicacion" id="ubicacion" class="form-control" />
+                    <br />
+                    <label>Descripción</label>
+                    <input type="text" name="Descripción" id="descripcion" class="form-control" />
+                    <br />
+                    <label>Fecha entrada disponible</label>
+                    <input type="date" name="fecha_entrada" id="fecha_entrada" class="form-control" />
+                    <br />
+                    <label>Duración en días de la estancia</label>
+                    <input type="text" name="duracion" id="duracion" class="form-control" />
+                    <br />
+                    <label>Precio total de la estancia</label>
+                    <input type="text" name="precio" id="precio" class="form-control" />
+                    <br />
+                    <label>Reservado</label>
+                    <input  type="checkbox" name="Activo" id="activo" class="form-control"/>
+                    <!--input  type="checkbox" name="Activo" id="activo" class="form-control" onchange="validacion()" value="false"/-->
+                    <br />
+
+                </div>
+                <div class="modal-footer">
+                    <button  type="button" onclick="editarHotel()" value="">Actualizar</button>  </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- MODAL PARA SUBIR FOTO-->
+<div id="fotoModal" class="modal fade">
+    <div class="modal-dialog">
+        <form method="post" id="hotel_form_foto" action="../ImageServlet" enctype="multipart/form-data">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Subir imagen</h3>
+                </div>
+                <div class="modal-body">
+
+                    <label>Imagen</label>
+                    <input type="text" name="cambiaImagenF" id="cambiaImagenF" class="form-control" />
+                    <br />
+
+                </div>
+
+                <div class="modal-body">
+                    <label>Cargar imagen</label>
+                    <input type="file" class="form-control" name="file">
+
+                </div>
+                <br/>
+                <div class="modal-footer">
+                    <!-- comment <button  type="button" onclick="registroImagen()" value="">Subir imagen</button>  </div>-->
+                    <button  type="submit" >Subir imagen</button>  </div>
+            </div>
+        </form>
+    </div>
+</div>

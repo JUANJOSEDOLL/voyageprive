@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" lang="es"/>
+        <title>Reservas Usuario</title>
+        <link rel="icon" type="image/x-icon" href="../images/favicon.png">
+        <meta charset="utf-8">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+        <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>		
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script type="text/javascript"   src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script> 
+        <script type="text/javascript" src="../js/service_lista_reservas_user.js"></script>
+
+
+    </head>
+    <body>
+
+
+        <input type="hidden" id="idUserINPUT">  
+
+        <form>   
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a href="../user/index.html"><img src="../images/favicon.png" style="border-radius: 20px; width:40px;"></a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a  href="../user/index.html">Inicio</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"  id="suEmail"></li>
+                        <li class="active" ><a href="#"  onClick="cerrarSesion()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </form>
+        <p id="emailuser"></p>
+
+        <table id="mytable" class="display" cellspacing="0" width="100%">
+            <br />
+
+
+            <br /><br />
+            <thead>
+                <tr>
+                    <th>ID_Reserva</th>
+                    <th>Fecha_Reserva</th>
+                    <th>NombreyApellidosHuesped</th>
+                    <th>ID_Usuario</th>
+                    <th>Email</th>
+                    <th>ID_Hotel</th>
+                    <th>Nombre_hotel</th>
+                    <th>Fecha_Entrada</th>
+                    <th>Ubicacion</th>
+                    <th>Duracion</th>
+                    <th>PrecioEstancia</th>
+                    <th>TitularTarjeta</th>
+                    <th>NumeroTarjeta</th>
+                    <th>VencimientoTarjeta</th>
+                    <th>CVV</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+            <tfoot>
+                <tr>
+
+                    <th>ID_Reserva</th>
+                    <th>Fecha_Reserva</th>
+                    <th>NombreyApellidosHuesped</th>
+                    <th>ID_Usuario</th>
+                    <th>Email</th>
+                    <th>ID_Hotel</th>
+                    <th>Nombre_hotel</th>
+                    <th>Fecha_Entrada</th>
+                    <th>Ubicacion</th>
+                    <th>Duracion</th>
+                    <th>PrecioEstancia</th>
+                    <th>TitularTarjeta</th>
+                    <th>NumeroTarjeta</th>
+                    <th>VencimientoTarjeta</th>
+                    <th>CVV</th>
+
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+
+</html>
+
+
+
+
+
+
+
