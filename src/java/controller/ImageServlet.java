@@ -34,7 +34,8 @@ public class ImageServlet extends HttpServlet {
          * 
          */
         
-	private String pathFiles = "C:\\JavaEE\\VoyagePrive\\web\\images";
+	private String pathFiles = "C:\\feedback_javaEE\\VoyagePrive\\web\\images";//ruta absoluta
+        //private String pathFiles = "\\web\\images";//ruta relativa
 	private File uploads = new File(pathFiles);
 	private String[] extens = {".ico", ".png", ".jpg", ".jpeg"};
 

@@ -63,6 +63,11 @@ public class HotelDAO implements DAO<Hotel, Integer> {
                 if (bean.isActivo()) {
                      sql += " AND Activo='" + bean.isActivo() + "'";
                 }
+                
+                ////ORDENO POR FECHA
+                if (bean.isActivo()) {
+                     sql += " ORDER BY FECHA_Entrada";
+                }
             }
 
             /**
