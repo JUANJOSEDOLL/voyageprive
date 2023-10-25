@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Nuestros Hoteles</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../js/service_index.js"></script>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+        <link rel="stylesheet" href="../css/flexbox_card_grid.css"/>
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <link rel="icon" type="image/x-icon" href="../images/favicon.png">
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
+    </head>
+    <body>
+        <header>     
+        </header> 
+
+        <br/><!-- comment -->
+        <br/><!-- comment -->
+        <br/><!-- comment -->
+        <br/><!-- comment -->
+        <div style="backdrop-filter: blur(10px);" class="jumbotron-center fixed-top">
+            <hr/>
+            <div class="container-fluid">
+
+                <div class="d-flex justify-content-around">
+                    <form class="form-inline">  
+
+                        <div class="p-1"><a class="navbar-brand" href="../user/index.html">
+                                <img src="../images/favicon.png" style="border-radius: 20px; width:40px;">
+                            </a></div>
+                        <div class="p-2"> <select  style=" border-style: solid;border-color: grey;" id="selectorCiudadU" class="form-control mb-2 mr-sm-2">
+                                <option value="" selected>Por favor escoge una ciudad</option>
+                            </select></div>
+                        <div class="p-2">
+                            <button    style=" border-style: solid;border-color: grey;" class="btn mb-2 mr-sm-2"   id="botonCiudad" type="button" onclick="traerDatosFiltradosPorCiudad()" value="">Ciudad</button>
+                        </div>
+                        <div class="p-2">
+                            <input     style=" border-style: solid;border-color: grey;" class="form-control mb-2 mr-sm-2" type="date"  id="fechaEntrada">
+                        </div>
+                        <div class="p-2">
+                            <button    style=" border-style: solid;border-color: grey;" class="btn mb-2 mr-sm-2"    id="botonFecha" type="button" onclick="traerDatosFiltradosPorFecha()" value="">Fecha de entrada</button>
+                        </div>
+
+                        <div class="p-2">
+                            <button    style=" border-style: solid;border-color: grey;" class="btn mb-2 mr-sm-2"    id="suEmail" type="button"  onclick="iraDatosdeCliente(1)" value="">¡Bienvenido!...admin@admin.com</button>
+                        </div>
+                        <div class="p-1"> <a class="navbar-brand"  onClick="cerrarSesion()">
+                                <img src="../images/exit.png" style="width:40px;">
+                            </a>
+                        </div>
+                        <input type="hidden" id="idUserINPUT">  
+                    </form>
+                </div>
+
+
+            </div> 
+            <hr/>
+        </div>  
+        <br/>
+
+        <div style="display: flex; justify-content: center; background-color: #eee; ">
+
+            <div style="width: 65%;">
+                <ul class="cards" id="res">
+                    <li class="cards__item" >
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </body>
+</html>

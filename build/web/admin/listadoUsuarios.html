@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" lang="es"/>
+        <title>Lista usuarios</title>
+        <link rel="icon" type="image/x-icon" href="../images/favicon.png">
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+        <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>		
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css"
+              href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+        <script type="text/javascript"
+        src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script type="text/javascript"
+        src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script> 
+
+        <link rel="stylesheet" type="text/css"
+              href="stylelistados.css">
+
+        <script type="text/javascript" src="../js/service_lista_usuarios.js"></script>
+
+
+    </head>
+    <body>
+        <form>   
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a href="../user/index.html"><img src="../images/favicon.png" style="border-radius: 20px; width:40px;"></a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a  href="../user/index.html">Inicio</a></li>
+                        <li class="active"><a href="./listadoHoteles.html">Listar hoteles área administrador</a></li>
+                        <li class="active"><a href="./listadoUsuarios.html">Listar usuarios  área administrador</a></li>
+                        <li class="active"><a href="./listadoReservas.html">Listar reservas  área administrador</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"  id="suEmail"></li>
+                        <li class="active" ><a href="#"  onClick="cerrarSesion()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </form>
+        <h2>Edición datos usuarios</h2>
+
+        <table id="mytable" class="display" cellspacing="0" width="100%">
+            <br />
+            <div align="right">
+                <button type="button" id="add_button" data-toggle="modal" data-target="#usuarioModal" class="btn btn-info btn-lg">Nuevo usuario</button>
+            </div>
+
+            <br /><br />
+            <thead>
+                <tr>
+                    <th>ID_Usuario</th>
+                    <th>E-mail</th>
+                    <th>Password</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th>ID_Usuario</th>
+                    <th>E-mail</th>
+                    <th>Password</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+
+</html>
+
+<!-- MODAL PARA INSERTAR REGISTRO  quito el get-->
+<div id="usuarioModal" class="modal fade">
+    <div class="modal-dialog">
+        <form id="usuario_form_nuevo"  method="post" enctype="multipart/form-data">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Nuevo usuario</h3>
+
+
+                </div>
+                <div class="modal-body">
+                    <label>E-mail</label>
+                    <input type="text" name="E-mail" id="nuevo_Email" class="form-control" />
+                    <br />
+                    <label>Password</label>
+                    <input type="text" name="Password" id="nuevo_Password" class="form-control" />
+                    <br />
+
+
+
+                </div>
+                <div class="modal-footer">
+
+                    <button  type="button" onclick="registroUsuario()" value="">Registrar usuario</button>
+
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+
+
+<!-- MODAL PARA ACTUALIZAR REGISTRO eliminado metodo method="get"-->
+<div id="updateModal" class="modal fade">
+    <div class="modal-dialog">
+        <form method="post" id="usuarioModal_form" enctype="multipart/form-data">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Actualizar datos usuario</h3>
+
+
+                </div>
+                <div class="modal-body">
+                    <label>ID_Usuario</label>
+                    <input type="text" name="ID_Usuario" id="ID_Usuario" class="form-control" />
+                    <br />
+                    <label>E-mail</label>
+                    <input type="text" name="E-mail" id="Email" class="form-control" />
+                    <br />
+                    <label>Password</label>
+                    <input type="text" name="Password" id="Password" class="form-control" />
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button  type="button" onclick="editarUsuario()" value="">Actualizar</button>  </div>
+            </div>
+        </form>
+    </div>
+</div>
+

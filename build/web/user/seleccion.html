@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Hotel seleccionado</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../js/service_seleccion.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.png">
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
+    </head>
+    <body>
+        <header>
+            <!--input type="hidden" id="emailuserINPUT" name="email_Usuario">
+            <input type="hidden" id="ID_Usuario" name="ID_Usuario"-->
+        </header>
+        <div class="jumbotron text-center">
+            <h1>Proceso de reserva</h1>
+            <p>Cumplimenta los datos por favor</p>
+            <p id="emailuserP"></p>
+           
+        </div>
+        <div class="container">
+            <div class="row"> 
+                <div class="col-sm-6" id="res">
+                </div>
+
+                <div class="col-sm-6" id="reg">
+                    <form  class="needs-validation">
+                        <div class="form-group">
+                            <label >Fecha Reserva</label>
+                            <input type="text"  class="form-control" placeholder="Fecha  Reserva" id="Fecha_Reserva">
+                        </div>
+                        <div class="form-group">
+                            <label >Nombre y Apellidos Huesped</label>
+                            <input type="text"  class="form-control" placeholder="Nombre y Apellidos Huesped" id="NombreyApellidosHuesped" required><!-- comment -->
+                        </div>
+                        <div class="form-group">
+                            <label >Email</label>
+                            <input type="text"  class="form-control" placeholder="Email" id="Email" required>
+                            <div class="valid-feedback"></div>
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="form-group">
+                            <label >Titular Tarjeta</label>
+                            <input type="text"  class="form-control" placeholder="Titular Tarjeta" id="TitularTarjeta" required><!-- comment -->
+                        </div>
+                        <div class="form-group">
+                            <label >Numero Tarjeta</label>
+                            <input type="text"  class="form-control" placeholder="Numero Tarjeta" id="NumeroTarjeta" required><!-- comment -->
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label >Vencimiento Tarjeta</label>
+                                <input type="date" class="form-control" placeholder="Vencimiento Tarjeta" id="VencimientoTarjeta" required><!-- comment -->
+                            </div> 
+                            <div class="form-group col"><label >CVV</label>
+                                <input type="text"  class="form-control" placeholder="CVV" id="CVV" required><!-- comment -->
+                            </div> 
+                        </div> 
+                        <div class="form-group">
+                            <button  type="button"  class="btn btn-secondary" style="background-color: #bd1343; border-color:#bd1343;" onclick="enviaOfertaSeleccionada()" value="">Pagar y Finalizar reserva</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
