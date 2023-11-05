@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
 /** 
- * 
+ * Clase que carga en el servidor imagenes
  * @author JUAN JOSE DOLL
  */
 
@@ -50,7 +50,7 @@ public class ImageServlet extends HttpServlet {
 		add(request, response);
 	}
 	/** 
-         * 
+         * Metodo que cambia imagen
          * @param req
          * @param res
          * @throws IOException 
@@ -80,7 +80,7 @@ public class ImageServlet extends HttpServlet {
 	}
 	
         /** 
-         * 
+         * Metodo que guarda archivo de imagen en el servidor
          * @param part
          * @param pathUploads
          * @param nombreImagen 

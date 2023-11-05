@@ -13,13 +13,13 @@ import model.UserDAO;
 import model.Usuario;
 
 /**
- *
+ * Clase usuario que contiene los diferentes metodos que le afectan
  * @author JUAN JOSE DOLL
  */
 public class UsuarioAction implements IAction {
 
     /**
-     *
+     * Metodo que distribuira las peticiones que le llegan por request a los diferentes metodos
      * @param request
      * @param response
      * @return
@@ -56,9 +56,9 @@ public class UsuarioAction implements IAction {
         return pagDestino;
     }
 
-    //Muestra todos los usuarios
+    
     /**
-     *
+     * Muestra todos los usuarios
      * @param request
      * @param response
      * @return
@@ -71,9 +71,9 @@ public class UsuarioAction implements IAction {
         return Usuario.toArrayJSon(usuarios);
     }
 
-    //Comprueba que el usuario este registrado
+    
     /**
-     *
+     * Comprueba que el usuario este registrado
      * @param request
      * @param response
      */
@@ -138,9 +138,9 @@ public class UsuarioAction implements IAction {
         }
     }
 
-    //Registro de un usuario DESDE USER
+    
     /**
-     *
+     * Registro de un usuario 
      * @param request
      * @param response
      */
@@ -180,9 +180,9 @@ public class UsuarioAction implements IAction {
 
     }
 
-    //Registro de un usuario DESDE ADMIN
+    
     /**
-     *
+     * Registro de un usuario desde admin
      * @param request
      * @param response
      */
@@ -213,7 +213,7 @@ public class UsuarioAction implements IAction {
     }
 
     /**
-     *
+     * Metodo que edita los datos de usuario
      * @param request
      * @param response
      */
@@ -246,9 +246,9 @@ public class UsuarioAction implements IAction {
 
     }
 
-    //Borra el registro identificadi por id
+    
     /**
-     *
+     * Borra el registro identificado por id
      * @param request
      * @param response
      */
@@ -269,7 +269,11 @@ public class UsuarioAction implements IAction {
         }
 
     }
-
+/**
+ * Metodo que cierra sesion y lleva a pagina de login
+ * @param request
+ * @param response 
+ */
     private void logout(HttpServletRequest request, HttpServletResponse response) {
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         HttpSession sesion = request.getSession();

@@ -23,7 +23,7 @@ public class Controller extends HttpServlet {
 //el controller recibe desde  login JS : ./Controller?ACTION=USUARIO.LOGIN&EMAIL=juanjo@gmail.com&PASS=1234
 
     /**   
-     * 
+     * Metodo que distribuira las peticiones que le llegan por request a los diferentes actions
      * @param request
      * @param response
      * @throws ServletException

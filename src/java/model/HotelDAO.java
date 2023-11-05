@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
+ * Clase que contiene las sentencias SQL a trasladar a la base de datos y
+ * devolver al frontend
  *
  * @author JUAN JOSE DOLL
  */
@@ -26,6 +28,8 @@ public class HotelDAO implements DAO<Hotel, Integer> {
     }
 
     /**
+     * Metodo que obtiene un listado de a bdd y lo devuelve como array de
+     * objetos hotel
      *
      * @param bean
      * @return
@@ -61,18 +65,15 @@ public class HotelDAO implements DAO<Hotel, Integer> {
                     sql += "AND FECHA_Entrada='" + bean.getFecha_Entrada() + "'";
                 }
                 if (bean.isActivo()) {
-                     sql += " AND Activo='" + bean.isActivo() + "'";
+                    sql += " AND Activo='" + bean.isActivo() + "'";
                 }
-                
+
                 ////ORDENO POR FECHA
                 if (bean.isActivo()) {
-                     sql += " ORDER BY FECHA_Entrada";
+                    sql += " ORDER BY FECHA_Entrada";
                 }
             }
 
-            /**
-             *
-             */
             //System.out.println(sql);
             ResultSet rs = motorSql.executeQuery(sql);
 
@@ -100,9 +101,6 @@ public class HotelDAO implements DAO<Hotel, Integer> {
 
     @Override
 
-    /**
-     *
-     */
     public int add(Hotel bean) {
         int resp = 0;
         try {
@@ -116,7 +114,7 @@ public class HotelDAO implements DAO<Hotel, Integer> {
                     + bean.getDescripcion() + "', '"
                     + bean.getFecha_Entrada() + "', '"
                     + bean.getURL_Imagen() + "', "
-                    + bean.isActivo() +");";
+                    + bean.isActivo() + ");";
 
             resp = motorSql.execute(sql);
 
@@ -207,8 +205,8 @@ public class HotelDAO implements DAO<Hotel, Integer> {
                 if (bean.getFecha_Entrada() != null) {
                     sql += ", Fecha_Entrada='" + bean.getFecha_Entrada() + "' ,";
                 }
-                
-                if (bean.isActivo()==true||bean.isActivo()==false) {
+
+                if (bean.isActivo() == true || bean.isActivo() == false) {
                     sql += " Activo=" + bean.isActivo() + "";
                 }
 
@@ -230,8 +228,6 @@ public class HotelDAO implements DAO<Hotel, Integer> {
         }
         return resp;
     }
-    
-    
 
     /**
      *

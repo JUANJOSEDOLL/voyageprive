@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- *
+ * clase que filtra el acceso segun el esquema declarado en web.xml
  * @author JUAN JOSE DOLL
  */
 @WebFilter("/FiltroAcceso")
@@ -31,6 +31,14 @@ public class Filtro implements Filter {
 
     }
     
+    /**
+     * Metodo que comprueba si el usuario tiene sesion y lo bloquea si no existe
+     * @param request
+     * @param response
+     * @param chain
+     * @throws IOException
+     * @throws ServletException 
+     */
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 

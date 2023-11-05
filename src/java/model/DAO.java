@@ -9,7 +9,7 @@ package model;
 import java.util.ArrayList;
 
 /**
- * 
+ * Clase interface para el bean, que represente la clase modelo correspondiente
  * @author JUAN JOSE DOLL
  * @param <E>
  * @param <I> 

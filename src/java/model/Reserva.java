@@ -205,6 +205,11 @@ public class Reserva {
         return "Reserva{" + "ID_Reserva=" + ID_Reserva + ", ID_Hotel=" + ID_Hotel + ", ID_Usuario=" + ID_Usuario + ", Fecha_Reserva=" + Fecha_Reserva + '}';
     }
 
+    /**
+     * Metodo que construye un json empleando api gson
+     * @param reservas
+     * @return  devuelve un json pasandole un array de objetos reservas
+     */
     public static String toArrayJSon(ArrayList<Reserva> reservas) {
         GsonBuilder builder = new GsonBuilder();
         builder.setPrettyPrinting();

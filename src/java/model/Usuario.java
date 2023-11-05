@@ -91,9 +91,9 @@ public class Usuario {
         return "Usuario{" + "id=" + id + ", email=" + email + ", password=" + password + '}';
     }
     /**
-     * 
+     * Metodo que construye un json empleando api gson
      * @param usuarios
-     * @return 
+     * @return  devuelve un json pasandole un array de objetos usuarios
      */
     public static String toArrayJSon(ArrayList<Usuario> usuarios) {
             GsonBuilder builder = new GsonBuilder(); 

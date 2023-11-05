@@ -20,19 +20,19 @@ import javax.servlet.http.Part;
 import model.Hotel;
 import model.HotelDAO;
 
-//El controller ha derivado hasta aquí la url para que gestione una accion relacionada con 
-//el objeto hotel
+
 /**
- *
+ * El controller ha derivado hasta aquí la url para que gestione una accion relacionada con 
+ * el objeto hotel
  * @author JUAN JOSE DOLL
  */
 public class HotelAction implements IAction {
 
     /**
-     *
+     * Metodo que distribuira las peticiones que le llegan por request a los diferentes metodos de la clase hotel
      * @param request
      * @param response
-     * @return
+     * @return devuelve un json con una coleccion determinada en funcion del metodo que se ha derivado
      */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
@@ -68,12 +68,12 @@ public class HotelAction implements IAction {
         return cadDestino;
     }
 
-    //Listar todos los hoteles
+    
     /**
-     *
+     * Lista todos los hoteles
      * @param request
-     * @param response
-     * @return
+     * @param response 
+     * @return array jason de ofertas de hoteles con sus propiedades
      */
     private String findAll(HttpServletRequest request,
             HttpServletResponse response) {
@@ -83,6 +83,12 @@ public class HotelAction implements IAction {
         return Hotel.toArrayJSon(hotels);
     }
 
+    /**
+     * Metodo de hoteles filtrados por activos
+     * @param request
+     * @param response
+     * @return array de hoteles filtrados por activos, o sea false, no reservados
+     */
     private String findAllActive(HttpServletRequest request,
             HttpServletResponse response) {
         HotelDAO hotelDao = new HotelDAO();
@@ -100,9 +106,9 @@ public class HotelAction implements IAction {
         return Hotel.toArrayJSon(hotels);
     }
 
-    //registra un hotel
+    
     /**
-     *
+     * Registra un hotel en la base de datos
      * @param request
      * @param response
      */
@@ -148,12 +154,12 @@ public class HotelAction implements IAction {
 
     }
 
-    //Listar los hoteles por ubicacion de su oferta
+    
     /**
-     *
+     * Listar los hoteles por ubicacion de su oferta
      * @param request
      * @param response
-     * @return
+     * @return devuelve un json de hoteles filtrados por una ciudad
      */
     private String findByCity(HttpServletRequest request,
             HttpServletResponse response) {
@@ -175,12 +181,12 @@ public class HotelAction implements IAction {
     }
 
     /**
-     *
+     * Listar los hoteles disponibles para una fecha
      * @param request
      * @param response
-     * @return
+     * @return devuelve un json de hoteles filtrados por fecha
      */
-    //Listar los hoteles disponibles para una fecha
+    
     private String findByDate(HttpServletRequest request,
             HttpServletResponse response) {
         HotelDAO hotelDao = new HotelDAO();
@@ -200,11 +206,11 @@ public class HotelAction implements IAction {
     }
 
     /**
-     *
+     * Borra el registro identificado por id
      * @param request
      * @param response
      */
-    //Borra el registro identificado por id
+    
     private void delete(HttpServletRequest request, HttpServletResponse response) {
 
         HotelDAO hotelDao = new HotelDAO();
@@ -223,9 +229,9 @@ public class HotelAction implements IAction {
 
     }
 
-    //Edita los datos del hotel
+    
     /**
-     *
+     * Edita los datos del hotel
      * @param request
      * @param response
      */
@@ -270,12 +276,12 @@ public class HotelAction implements IAction {
         }
     }
 
-    //Lista el hotel por id
+    
     /**
-     *
+     * Lista el hotel por id
      * @param request
      * @param response
-     * @return
+     * @return devuelve json compuesto por un unico elemento
      */
     private String seleccion(HttpServletRequest request,
             HttpServletResponse response) {

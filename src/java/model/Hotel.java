@@ -5,20 +5,18 @@ import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
 
 /**
- * 
+ * Clase que representa las ofertas que se muestran en el sitio
  * @author JUAN JOSE DOLL
  */
 
 public class Hotel {
-    /**
-     * 
-     */
+    
     private String Nombre_hotel, Descripcion, Fecha_Entrada, URL_Imagen, Ubicacion;
     private int duracion, ID_Hotel;
     private float PrecioEstancia;
     private boolean Activo; 
    /**
-     * 
+     * Constructor de la clase
      * @param Nombre_hotel
      * @param Descripcion
      * @param Fecha_Entrada
@@ -42,14 +40,11 @@ public class Hotel {
     }
     
     /**
-     * 
+     * Constructor vacio
      */
     public Hotel() {
     }
-   /**
-    * 
-    * @return 
-    */
+   
     
     public String getNombre_hotel() {
         return Nombre_hotel;
@@ -134,6 +129,12 @@ public class Hotel {
     public String toString() {
         return "hotel{" + "Nombre_hotel=" + Nombre_hotel + ", Descripcion=" + Descripcion + ", Fecha_Entrada=" + Fecha_Entrada + ", duracion=" + duracion + ", ID_Hotel=" + ID_Hotel + ", PrecioEstancia=" + PrecioEstancia + '}';
     }
+    
+    /**
+     * Metodo que construye un json
+     * @param hotel
+     * @return 
+     */
     public static String toCadena(Hotel hotel) {
         return "hotel{" + 
                 "Nombre_hotel=" + hotel.getNombre_hotel() + ", "
@@ -145,9 +146,9 @@ public class Hotel {
     
 
     /**
-     * 
+     * Metodo que construye un json empleando api gson
      * @param hotels
-     * @return 
+     * @return devuelve un json pasandole un array de objetos hotel
      */
      public static String toArrayJSon(ArrayList<Hotel> hotels) {
             GsonBuilder builder = new GsonBuilder(); 

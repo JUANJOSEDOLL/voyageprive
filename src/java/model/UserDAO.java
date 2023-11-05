@@ -7,7 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * 
+ * Clase que contiene las sentencias SQL a trasladar a la base de datos y devolver las respuestas al frontend
  * @author JUAN JOSE DOLL
  */
 public class UserDAO implements DAO<Usuario, Integer>{
@@ -28,15 +28,15 @@ public class UserDAO implements DAO<Usuario, Integer>{
         motorSql = new MotorSQL();
     }
 /**
- * 
- * @param entidad
- * @return 
+ * Anyade un usuario
+ * @param user
+ * @return devuelve entero
  */
     @Override
-    public int add(Usuario entidad) {
+    public int add(Usuario user) {
         String sql = SQL_INSERT
-                + "('" + entidad.getEmail() + "',"
-                + " '" + entidad.getPassword() + "')";
+                + "('" + user.getEmail() + "',"
+                + " '" + user.getPassword() + "')";
      
             motorSql.connect();
             int resp = motorSql.execute(sql);
@@ -47,7 +47,7 @@ public class UserDAO implements DAO<Usuario, Integer>{
 
      }
     /**
-     * 
+     * Metodo que borra un usuario
      * @param e
      * @return 
      */
@@ -62,9 +62,9 @@ public class UserDAO implements DAO<Usuario, Integer>{
     }
 
     /**
-     * 
+     * Metodo que actualiza los datos de un usuario
      * @param bean
-     * @return 
+     * @return devuelve un entero
      */
     @Override
     public int update(Usuario bean) {
@@ -85,13 +85,11 @@ public class UserDAO implements DAO<Usuario, Integer>{
         return resp;
     }
 /**
- * Puede devolver un String??
+ * Metodo que llama a todos los registros de usuarios, los devuelve en un arraylist
  * @param bean
- * @return 
+ * @return devuelve un arraylist
  */
-    
-//Metodo que llama a todos los registros de usuarios, los devuelve en un arraylist
-    
+  
  @Override
     public ArrayList<Usuario> findAll(Usuario bean) {
         ArrayList<Usuario> lstUsuarios = new ArrayList<>();

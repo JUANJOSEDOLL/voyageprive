@@ -6,6 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * Clase que interactua directamente con la base de datos.
+ * @author JUAN JOSE DOLL
+ */
 public class MotorSQL {
 /*Objetos necesarios para hablar con la BD*/
 //1º--> Conexión - Connection

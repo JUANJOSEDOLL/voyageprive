@@ -26,7 +26,7 @@ import model.ReservaDAO;
 //El controller ha derivado hasta aquí la url para que gestione una accion relacionada con 
 //el objeto reserva
 /**
- *
+ * Metodo que distribuira las peticiones que le llegan por request a los diferentes metodos de la clase reserva
  * @author JUAN JOSE DOLL
  */
 public class ReservaAction implements IAction {
@@ -60,9 +60,9 @@ public class ReservaAction implements IAction {
         return cadDestino;
     }
 
-    //Lista todas las reservas,a utilizar por el administrador
+    
     /**
-     *
+     * Lista todas las reservas,a utilizar por el administrador
      * @param request
      * @param response
      * @return
@@ -75,12 +75,12 @@ public class ReservaAction implements IAction {
         return Reserva.toArrayJSon(reservas);
     }
 
-    //Lista las reservas del usuario
+    
     /**
-     *
+     * Lista las reservas del usuario
      * @param request
      * @param response
-     * @return
+     * @return devuelve un json de reservas del usuario
      */
     private String findAllUserBookings(HttpServletRequest request,
             HttpServletResponse response) {
@@ -114,9 +114,9 @@ public class ReservaAction implements IAction {
         ArrayList<Reserva> reservas = reservaDAO.findAll(reserva);
         return Reserva.toArrayJSon(reservas);
     }
-    //registra un reserva
+    
     /**
-     *
+     * Registra un reserva
      * @param request
      * @param response
      */
@@ -190,9 +190,9 @@ public class ReservaAction implements IAction {
         }
     }
 
-    //Borra el registro identificado por id
+    
     /**
-     *
+     * Borra el registro identificado por id
      * @param request
      * @param response
      */
@@ -214,9 +214,9 @@ public class ReservaAction implements IAction {
 
     }
 
-    //Edita los datos de la reserva
+    
     /**
-     *
+     * Edita los datos de la reserva
      * @param request
      * @param response
      */

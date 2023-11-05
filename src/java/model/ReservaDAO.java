@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- *
+ * Clase que contiene las sentencias SQL a trasladar a la base de datos y devolver las respuestas al frontend
  * @author JUAN JOSE DOLL
  */
 public class ReservaDAO implements DAO<Reserva, Integer> {
@@ -30,7 +30,7 @@ public class ReservaDAO implements DAO<Reserva, Integer> {
     }
 
     /**
-     *
+     * Metodo que devuelve un array de la sentencia sql
      * @param bean
      * @return
      */
@@ -136,7 +136,7 @@ public class ReservaDAO implements DAO<Reserva, Integer> {
 
     @Override
     /**
-     *
+     * Anyade una reserva en la base de datos
      */
     public int add(Reserva bean) {
         int resp = 0;
@@ -174,7 +174,7 @@ public class ReservaDAO implements DAO<Reserva, Integer> {
     }
 
     /**
-     *
+     * Borra una reserva
      * @param id
      * @return
      */
@@ -205,9 +205,9 @@ public class ReservaDAO implements DAO<Reserva, Integer> {
     }
 
     /**
-     *
+     * Actualiza una reserva
      * @param bean
-     * @return
+     * @return devuelve un entero
      */
     @Override
     public int update(Reserva bean) {
@@ -246,7 +246,7 @@ public class ReservaDAO implements DAO<Reserva, Integer> {
         }
 
         if (resp > 0) {
-            System.out.println("reserva actualizado con éxito.");
+            System.out.println("reserva actualizada con éxito.");
         } else {
             System.out.println("No se pudo actualizar.");
         }
