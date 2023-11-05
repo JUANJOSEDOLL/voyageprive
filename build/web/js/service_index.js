@@ -7,7 +7,6 @@
 //ya que si está correctamente logueado ha de tener la variable en memoria
 
 const email = localStorage.getItem("EMAILUSER");
-
 //ponemos a prueba el registro de usuario, para que no se pueda acceder escribiendo
 //la dirección URL de index. Todo lo que pasa por controller, se encarga el filtro
 
@@ -133,12 +132,15 @@ function llenarDatosUsuario() {
     $("#suEmail").text(txtemail);
     //Para obtener el id de user hay que obtenerlo desde java
     //java lo reenvia por parametro y se recoge desde JS, ahora si esta disponible
-    //mediante localStorage
+    //mediante localStorage, se comprueba si existe ya un parametro , si no existe se recoge por get
 
-    var params = new URLSearchParams(location.search);
-    var parametro = params.get('IDUSER');
-    $("#idUserINPUT").val(parametro);
-    localStorage.setItem("IDUSER", parametro);
+    if (localStorage.getItem("IDUSER")===null) {
+        var params = new URLSearchParams(location.search);
+        var parametro = params.get('IDUSER');
+        $("#idUserINPUT").val(parametro);
+        localStorage.setItem("IDUSER", parametro);
+    };
+
 
     //https://developer.mozilla.org/es/docs/Web/API/Window/localStorage
 

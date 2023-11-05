@@ -2,7 +2,11 @@
 
 $(document).ready(function () {
     
-    let id = parseInt(localStorage.getItem("IDUSER"));
+    var id = parseInt(localStorage.getItem("IDUSER"));
+    $("#idUserINPUT").val(id);
+    var email = localStorage.getItem("EMAILUSER");
+    $("#emailuser").text(email);
+    
 
     let datatable = $('#mytable').DataTable({
         "ajax": {
