@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /** 
- * 
+ * Esta clase centraliza las peticiones del frontend y las distribuye a las respectivas clases segun el modelo mvc
  * @author JUAN JOSE DOLL
  */
 
